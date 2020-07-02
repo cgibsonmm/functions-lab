@@ -19,6 +19,11 @@ const jsFunctionsLab = (() => {
 
   function maxOfTwoNumbers(x, y) {
     // CODE HERE
+    if (x < y) {
+      return y
+    } else {
+       return x 
+    }
   }
 
   console.log(maxOfTwoNumbers(99, 5) + ' <= this answer should be 99');
