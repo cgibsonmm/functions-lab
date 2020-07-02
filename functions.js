@@ -22,7 +22,7 @@ const jsFunctionsLab = (() => {
     if (x < y) {
       return y
     } else {
-       return x 
+      return x
     }
   }
 
@@ -42,6 +42,13 @@ const jsFunctionsLab = (() => {
 
   function maxOfThree(x, y, z) {
     // CODE HERE
+    if (x < y && y > z) {
+      return y
+    } else if (x > y && x > z) {
+      return x
+    } else {
+      return z
+    }
   }
   console.log(maxOfThree(4, 5, 9) + ' <= this answer should be 9')
 
@@ -62,6 +69,15 @@ const jsFunctionsLab = (() => {
 
   function isCharacterAVowel(letter) {
     // CODE HERE
+    // const vowels = ['a', 'e', 'i', 'o', 'u']
+    // let isValue = false
+    // for (let i = 0; i < vowels.length; i++) {
+    //   if (letter === vowels[i]) {
+    //     isValue = true
+    //   } 
+    // }
+    // return isValue
+    return letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u"
   }
   console.log(isCharacterAVowel('a') + ' <= this answer should be true')
   console.log(isCharacterAVowel('n') + ' <= this answer should be false')
@@ -80,6 +96,11 @@ const jsFunctionsLab = (() => {
 
   function sumArray(arr) {
     // CODE HERE
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+      sum += arr[i]
+    }
+    return sum
   }
   console.log(sumArray([1, 2, 3, 4]) + ' <= this answer should be 10')
 
@@ -97,6 +118,11 @@ const jsFunctionsLab = (() => {
 
   function multiplyArray(arr) {
     // CODE HERE
+    let sum = 1
+    for (let i = 0; i < arr.length; i++) {
+      sum *= arr[i]
+    }
+    return sum
   }
   console.log(multiplyArray([1, 2, 3, 4]) + ' <= this answer should be 24')
 
@@ -113,6 +139,22 @@ const jsFunctionsLab = (() => {
 
   function reverseString(stringToReverse) {
     // CODE HERE
+    // let collector = ''
+    // for (let i = stringToReverse.length - 1; i >= 0; i--) {
+    //   collector += stringToReverse[i]
+    // }
+    // return collector
+
+    // another solution
+
+    // let result = []
+    // let n = stringToReverse.length
+    // while (n >= 0) {
+    //   result.push(stringToReverse[n])
+    //   n--
+    // }
+    // return result.join("")
+    return stringToReverse.split('').reverse().join('')
   }
   console.log(reverseString('General Assembly') + ' <= this answer should be "ylbmessA lareneG"')
 
@@ -129,6 +171,13 @@ const jsFunctionsLab = (() => {
 
   function findLongestWord(arrayOfWords) {
     // CODE HERE
+    let longestWordLength = 0
+    for (let i = 0; i < arrayOfWords.length; i++) {
+      if (arrayOfWords[i].length > longestWordLength) {
+        longestWordLength = arrayOfWords[i].length
+      }
+    }
+    return longestWordLength
   }
   console.log(findLongestWord(['short', 'longest', 'longer']) + ' <= this answer should be 7')
 
@@ -146,6 +195,15 @@ const jsFunctionsLab = (() => {
 
   function filterLongWords(arrayOfWords, length) {
     // CODE HERE
+    const collector = []
+    for (let i = 0; i < arrayOfWords.length; i++) {
+      const word = arrayOfWords[i]
+      if (word.length > length) {
+        collector.push(word)
+      }
+    }
+    return collector
+    // return arrayOfWords.filter(element => element.length > length)
   }
   console.log(filterLongWords(['short', 'longest', 'longer'], 5) + ` <= this answer should be ['longest', 'longer']`)
 
